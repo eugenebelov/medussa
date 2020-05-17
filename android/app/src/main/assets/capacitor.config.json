@@ -1,0 +1,60 @@
+{
+  "appId": "io.ionic.starter",
+
+  "appName": "myApp",
+
+  "webDir": "www",
+
+  "npmClient": "npm",
+
+  "bundledWebRuntime": false,
+
+  "hideLogs": true,
+
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+
+  "server": {
+    "url": "http://192.168.1.33:8100",
+    "hostname": "app",
+    "iosScheme": "ionic",
+    "androidScheme": "http",
+    "allowNavigation": [
+      "example.org",
+      "*.example.org",
+      "192.0.2.1"
+    ]
+  },
+  "overrideUserAgent": "my custom user agent",
+  "appendUserAgent": "string to append",
+  "backgroundColor": "#ffffffff",
+  "android": {
+    "overrideUserAgent": "my custom user agent for Android",
+    "appendUserAgent": "string to append for Android",
+    "backgroundColor": "#ffffffff",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
+
+    "hideLogs": true
+  },
+  "ios": {
+    "overrideUserAgent": "my custom user agent for iOS",
+    "appendUserAgent": "string to append for iOS",
+    "backgroundColor": "#ffffffff",
+    "contentInset": "always",
+    "cordovaSwiftVersion": "4.2",
+    "minVersion": "11.3",
+    "cordovaLinkerFlags": ["-ObjC"],
+    "allowsLinkPreview": false,
+  "hideLogs": true
+  },
+  "electron": {
+    "overrideUserAgent": "my custom user agent for Electron",
+    "appendUserAgent": "string to append for Electron"
+  }
+}
