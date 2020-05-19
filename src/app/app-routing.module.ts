@@ -3,10 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    loadChildren: () => import('./main/tabs/tabs.module').then(m => m.TabsPageModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   },
@@ -17,6 +13,10 @@ const routes: Routes = [
   {
     path: 'restore-password',
     loadChildren: () => import('./auth/restore-password/restore-password.module').then( m => m.RestorePasswordPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./main/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: '',

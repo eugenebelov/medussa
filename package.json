@@ -8,6 +8,7 @@
     "start": "ng serve",
     "ionic": "ionic serve",
     "ionic-lab": "ionic serve -l",
+    "sync": "ionic cap sync",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
