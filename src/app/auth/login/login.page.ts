@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('onsubmit');
+    this.router.navigate(['/tabs']);
   }
 
 }
