@@ -13,47 +13,5 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-grid>
-        <ion-row>
-            <ion-col size-sm>
-                <ion-card [ngStyle]="{ 'height': '150px' }" [button]="true" [mode]="'ios'">
-                    <ion-card-header>
-                        <ion-card-title>Very cool banner</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size-sm>
-                <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true" [mode]="'md'">
-                    <ion-card-header>
-                        <ion-card-title>Check daily healthstatus</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
-            </ion-col>
-            <ion-col>
-                <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true" [mode]="'md'">
-                    <ion-card-header>
-                        <ion-card-title>Book next appointment</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-card [ngStyle]="{ 'height': '150px' }" [button]="true" [mode]="'md'">
-                    <ion-card-header>
-                        <ion-card-title>Open your prescriptions</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
-            </ion-col>
-            <ion-col>
-                <ion-card [ngStyle]="{ 'height': '150px' }" [button]="true" [mode]="'md'">
-                    <ion-card-header>
-                        <ion-card-title>Call a doctor right now</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+    <app-dashboard></app-dashboard>
 </ion-content>

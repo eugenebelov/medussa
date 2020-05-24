@@ -20,7 +20,9 @@ import {environment} from '../environments/environment';
     entryComponents: [],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(),
+        IonicModule.forRoot({
+            mode: 'md'
+        }),
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebaseConfig, 'medussa'),
         AngularFirestoreModule,
