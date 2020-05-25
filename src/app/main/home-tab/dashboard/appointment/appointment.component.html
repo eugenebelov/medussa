@@ -7,6 +7,40 @@
   </ion-toolbar>
 </ion-header>
 
-<p>
-  appointment works!
-</p>
+<ion-content [fullscreen]="true">
+  <p>
+    appointment works!
+  </p>
+  <ion-card>
+    <ion-item>
+      <ion-label>Year</ion-label>
+      <ion-datetime
+        displayFormat="YYYY"
+        [value]="startYear.getFullYear()"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Month</ion-label>
+      <ion-datetime
+        displayFormat="MMMM"
+        [value]="startYear.getMonth() + 1"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Day</ion-label>
+      <ion-datetime
+        displayFormat="DDDD"
+        [value]="startYear.getDay()"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hour</ion-label>
+      <ion-datetime
+        displayFormat="h"
+        [value]="startYear.getHours()"
+      ></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <ion-button (click)="addEvent()">Add Event</ion-button>
+</ion-content>

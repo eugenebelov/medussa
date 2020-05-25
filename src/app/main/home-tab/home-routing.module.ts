@@ -9,25 +9,23 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-    children: [
-      {
-        path: 'healthstatus',
-        component: HealthstatusComponent,
-      },
-      {
-        path: 'appoinment',
-        component: AppointmentComponent,
-      },
-      {
-        path: 'perscriptions',
-        component: PerscriptionsComponent,
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/home-tab',
-        pathMatch: 'full',
-      },
-    ],
+  },
+  {
+    path: 'healthstatus',
+    component: HealthstatusComponent,
+  },
+  {
+    path: 'appoinment',
+    component: AppointmentComponent,
+  },
+  {
+    path: 'perscriptions',
+    component: PerscriptionsComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/home-tab',
+    pathMatch: 'full',
   },
 ];
 
