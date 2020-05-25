@@ -10,14 +10,14 @@
   </ion-row>
   <ion-row>
     <ion-col size-sm>
-      <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true">
+      <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true" [routerLink]="['healthstatus']">
         <ion-card-header>
           <ion-card-title>Check daily healthstatus</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
     <ion-col>
-      <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true">
+      <ion-card [ngStyle]="{ 'height': '150px'}" [button]="true" [routerLink]="['appoinment']">
         <ion-card-header>
           <ion-card-title>Book next appointment</ion-card-title>
         </ion-card-header>
@@ -26,7 +26,7 @@
   </ion-row>
   <ion-row>
     <ion-col>
-      <ion-card [ngStyle]="{ 'height': '150px' }" [button]="true">
+      <ion-card [ngStyle]="{ 'height': '150px' }" [button]="true" [routerLink]="['perscriptions']">
         <ion-card-header>
           <ion-card-title>Open your prescriptions</ion-card-title>
         </ion-card-header>

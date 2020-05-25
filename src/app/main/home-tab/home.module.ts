@@ -6,10 +6,10 @@ import { HomePage } from './home.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {AppointmentComponent} from './dashboard/appointment/appointment.component';
-import {HealthstatusComponent} from './dashboard/healthstatus/healthstatus.component';
-import {PerscriptionsComponent} from './dashboard/perscriptions/perscriptions.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppointmentComponent } from './dashboard/appointment/appointment.component';
+import { HealthstatusComponent } from './dashboard/healthstatus/healthstatus.component';
+import { PerscriptionsComponent } from './dashboard/perscriptions/perscriptions.component';
 
 @NgModule({
   imports: [
@@ -17,8 +17,14 @@ import {PerscriptionsComponent} from './dashboard/perscriptions/perscriptions.co
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
-  declarations: [HomePage, DashboardComponent, AppointmentComponent, HealthstatusComponent, PerscriptionsComponent]
+  declarations: [
+    HomePage,
+    DashboardComponent,
+    AppointmentComponent,
+    HealthstatusComponent,
+    PerscriptionsComponent,
+  ],
 })
 export class HomePageModule {}
