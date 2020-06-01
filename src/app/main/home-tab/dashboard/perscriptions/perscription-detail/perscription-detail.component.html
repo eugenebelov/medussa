@@ -1,5 +1,16 @@
 <h4>{{ label }}</h4>
-<p *ngFor="let detail of details">
-  perscription-detail works!
-  {{ detail.name }} / {{ detail.freq }}
-</p>
+
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="6" *ngFor="let detail of details">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ detail.name }}</ion-card-title>
+          <ion-card-content>
+            <ion-badge id="cart-badge">{{ detail.freq }}</ion-badge>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

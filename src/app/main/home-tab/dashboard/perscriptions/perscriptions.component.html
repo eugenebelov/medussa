@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-segment (ionChange)="segmentChanged($event)" value="1">
+  <ion-segment #segments (ionChange)="onSegmentChanged($event)" value="1">
     <ion-segment-button
       *ngFor="let segment of perscriptionsData"
       value="{{ segment.type }}"
@@ -17,7 +17,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-slides #slides pager="false" [options]="slideOpts">
+  <ion-slides #slides pager="false" [options]="slideOpts" (ionSlideDidChange)="onSlideChange()">
     <ion-slide *ngFor="let slide of perscriptionsData">
       <msc-perscription-detail [label]="slide.label" [details]="slide.data"></msc-perscription-detail>
     </ion-slide>

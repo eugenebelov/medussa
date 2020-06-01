@@ -6,6 +6,11 @@ export const PerscriptionsStub = [
       { name: 'Codein', freq: '2 times' },
       { name: 'Lexapro', freq: '2 time' },
       { name: 'Ibuprofen', freq: '2 time' },
+      { name: 'Ibuprofen', freq: '2 time' },
+      { name: 'Ibuprofen', freq: '2 time' },
+      { name: 'Ibuprofen', freq: '2 time' },
+      { name: 'Ibuprofen', freq: '2 time' },
+      { name: 'Ibuprofen', freq: '2 time' },
     ],
   },
   {

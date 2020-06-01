@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSegment, IonSlides } from '@ionic/angular';
 import { PerscriptionsStub } from './stub';
 
 @Component({
@@ -11,6 +11,7 @@ export class PerscriptionsComponent implements OnInit {
   constructor() {}
 
   @ViewChild('slides') slides: IonSlides;
+  @ViewChild('segments') segments: IonSegment;
 
   perscriptionsData = PerscriptionsStub;
   currentSlide = 1;
@@ -22,7 +23,13 @@ export class PerscriptionsComponent implements OnInit {
 
   ngOnInit() {}
 
-  segmentChanged(ev: any) {
+  onSlideChange() {
+    this.slides
+      .getActiveIndex()
+      .then((i) => (this.segments.value = i.toString()));
+  }
+
+  onSegmentChanged(ev: any) {
     this.slides.slideTo(ev.detail.value);
     this.currentSlide = ev.detail.value;
   }
