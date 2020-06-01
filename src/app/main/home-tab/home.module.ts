@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppointmentComponent } from './dashboard/appointment/appointment.component';
 import { HealthstatusComponent } from './dashboard/healthstatus/healthstatus.component';
 import { PerscriptionsComponent } from './dashboard/perscriptions/perscriptions.component';
+import {PerscriptionDetailComponent} from './dashboard/perscriptions/perscription-detail/perscription-detail.component';
 
 @NgModule({
   imports: [
@@ -19,12 +20,13 @@ import { PerscriptionsComponent } from './dashboard/perscriptions/perscriptions.
     ExploreContainerComponentModule,
     HomePageRoutingModule,
   ],
-  declarations: [
-    HomePage,
-    DashboardComponent,
-    AppointmentComponent,
-    HealthstatusComponent,
-    PerscriptionsComponent,
-  ],
+    declarations: [
+        HomePage,
+        DashboardComponent,
+        AppointmentComponent,
+        HealthstatusComponent,
+        PerscriptionsComponent,
+        PerscriptionDetailComponent,
+    ],
 })
 export class HomePageModule {}
