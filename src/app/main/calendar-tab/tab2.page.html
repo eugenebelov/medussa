@@ -13,5 +13,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <full-calendar
+    defaultView="dayGridMonth"
+    [plugins]="myCalPlugins"
+  ></full-calendar>
 </ion-content>
