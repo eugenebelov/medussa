@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
-import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +28,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    FullCalendarModule,
   ],
   providers: [
     StatusBar,

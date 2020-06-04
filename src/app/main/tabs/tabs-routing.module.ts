@@ -12,8 +12,8 @@ const routes: Routes = [
         loadChildren: () => import('../home-tab/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'calendar-tab',
-        loadChildren: () => import('../calendar-tab/tab2.module').then(m => m.Tab2PageModule)
+        path: 'appointments-tab',
+        loadChildren: () => import('../appointments-tab/appointments.module').then(m => m.AppointmentsPageModule)
       },
       {
         path: 'profile-tab',

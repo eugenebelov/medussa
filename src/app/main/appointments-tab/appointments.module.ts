@@ -2,11 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab2Page } from './tab2.page';
+import { AppointmentsPage } from './appointments.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { Tab2PageRoutingModule } from './tab2-routing.module';
-import { FullCalendarModule } from '@fullcalendar/angular';
+import { AppointmentsPageRoutingModule } from './appoinements-routing.module';
 
 @NgModule({
   imports: [
@@ -14,9 +13,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule,
-    FullCalendarModule
+    AppointmentsPageRoutingModule,
   ],
-  declarations: [Tab2Page],
+  declarations: [AppointmentsPage],
 })
-export class Tab2PageModule {}
+export class AppointmentsPageModule {}
