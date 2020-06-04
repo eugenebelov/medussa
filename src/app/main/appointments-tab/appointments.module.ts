@@ -6,6 +6,9 @@ import { AppointmentsPage } from './appointments.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
 import { AppointmentsPageRoutingModule } from './appoinements-routing.module';
+import { AppointementItemComponent } from './appointement-item/appointement-item.component';
+import {CurrentComponent} from './current/current.component';
+import {PastComponent} from './past/past.component';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { AppointmentsPageRoutingModule } from './appoinements-routing.module';
     ExploreContainerComponentModule,
     AppointmentsPageRoutingModule,
   ],
-  declarations: [AppointmentsPage],
+  declarations: [AppointmentsPage, AppointementItemComponent, CurrentComponent, PastComponent],
 })
 export class AppointmentsPageModule {}

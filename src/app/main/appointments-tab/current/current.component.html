@@ -1,0 +1,28 @@
+<ion-list lines="none">
+  <ion-list-header>
+    For Today
+  </ion-list-header>
+  <msc-appointement-item
+    *ngFor="let todayItem of appointments.today"
+    [date]="todayItem.date"
+    [title]="todayItem.title"
+    [location]="todayItem.location"
+    [doctor]="todayItem.details.doctor"
+    [clinic]="todayItem.details.clinic"
+  ></msc-appointement-item>
+</ion-list>
+
+<ion-list lines="none">
+  <ion-list-header>
+    Future Appointents
+  </ion-list-header>
+
+  <msc-appointement-item
+    *ngFor="let futureItem of appointments.future"
+    [date]="futureItem.date"
+    [title]="futureItem.title"
+    [location]="futureItem.location"
+    [doctor]="futureItem.details.doctor"
+    [clinic]="futureItem.details.clinic"
+  ></msc-appointement-item>
+</ion-list>
