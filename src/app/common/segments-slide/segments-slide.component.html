@@ -13,7 +13,5 @@
   [options]="slideOpts"
   (ionSlideDidChange)="onSlideChange()"
 >
-  <ion-slide *ngFor="let slide of segmentsData">
-    <ng-template msdSegmentSlide></ng-template>
-  </ion-slide>
+  <ng-content></ng-content>
 </ion-slides>

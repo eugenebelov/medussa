@@ -13,5 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <msc-segments-slide [segmentsData]="slides"></msc-segments-slide>
+  <msc-segments-slide [segmentsData]="slides">
+    <ion-slide *ngFor="let slide of slides">
+      <msc-slide-item
+        [component]="slide.component"
+        [title]="slide.label"
+        [data]="slide.data"
+      ></msc-slide-item>
+    </ion-slide>
+  </msc-segments-slide>
 </ion-content>

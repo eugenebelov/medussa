@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment, IonSlides } from '@ionic/angular';
 import { PerscriptionsStub } from './stub';
+import { Appointments } from '../../../appointments-tab/stub';
+import { CurrentComponent } from '../../../appointments-tab/current/current.component';
+import { PastComponent } from '../../../appointments-tab/past/past.component';
+import { PerscriptionDetailComponent } from './perscription-detail/perscription-detail.component';
 
 @Component({
   selector: 'msc-perscriptions',
@@ -10,27 +14,20 @@ import { PerscriptionsStub } from './stub';
 export class PerscriptionsComponent implements OnInit {
   constructor() {}
 
-  @ViewChild('slides') slides: IonSlides;
-  @ViewChild('segments') segments: IonSegment;
-
-  perscriptionsData = PerscriptionsStub;
-  currentSlide = 1;
-
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400,
-  };
+  slides = [
+    {
+      ...PerscriptionsStub[0],
+      component: PerscriptionDetailComponent,
+    },
+    {
+      ...PerscriptionsStub[1],
+      component: PerscriptionDetailComponent,
+    },
+    {
+      ...PerscriptionsStub[2],
+      component: PerscriptionDetailComponent,
+    },
+  ];
 
   ngOnInit() {}
-
-  onSlideChange() {
-    this.slides
-      .getActiveIndex()
-      .then((i) => (this.segments.value = i.toString()));
-  }
-
-  onSegmentChanged(ev: any) {
-    this.slides.slideTo(ev.detail.value);
-    this.currentSlide = ev.detail.value;
-  }
 }

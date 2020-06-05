@@ -3,7 +3,7 @@
     For Today
   </ion-list-header>
   <msc-appointement-item
-    *ngFor="let todayItem of appointments.today"
+    *ngFor="let todayItem of data.today"
     [date]="todayItem.date"
     [title]="todayItem.title"
     [location]="todayItem.location"
@@ -18,7 +18,7 @@
   </ion-list-header>
 
   <msc-appointement-item
-    *ngFor="let futureItem of appointments.future"
+    *ngFor="let futureItem of data.future"
     [date]="futureItem.date"
     [title]="futureItem.title"
     [location]="futureItem.location"

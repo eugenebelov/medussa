@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { IonSegment, IonSlides } from '@ionic/angular';
 import { SlideDirective } from './slide.directive';
+import { ISlide } from '../../main/appointments-tab/stub';
 
 interface ISegmentSlide {
   type: number;
@@ -18,8 +19,8 @@ interface ISegmentSlide {
   component?: any;
 }
 
-export interface ISegmentSlideItem {
-  appointments?: any;
+export interface ISegmentSlideItem<T> {
+  data: T[];
 }
 
 @Component({
@@ -37,42 +38,24 @@ export class SegmentsSlideComponent implements OnInit, AfterViewInit {
 
   @Input() segmentsData: ISegmentSlide[];
 
-  @ViewChildren(SlideDirective) adSlide: QueryList<SlideDirective>;
-
   @ViewChild('slides') slides: IonSlides;
   @ViewChild('segments') segments: IonSegment;
 
-  constructor(private resolver: ComponentFactoryResolver) {}
+  constructor() {}
 
   ngOnInit() {}
 
   ngAfterViewInit(): void {
-    this.slideRender(this.adSlide.toArray(), this.currentSlide);
   }
 
   onSlideChange() {
     this.slides.getActiveIndex().then((i) => {
       this.segments.value = i.toString();
-      this.slideRender(this.adSlide.toArray(), i);
     });
   }
 
   onSegmentChanged(ev: any) {
     this.slides.slideTo(ev.detail.value);
     this.currentSlide = ev.detail.value;
-  }
-
-  private slideRender(slides: SlideDirective[], current: number = 0) {
-    const compFactory = this.resolver.resolveComponentFactory(
-      this.segmentsData[current].component
-    );
-
-    const viewRef = slides[current].viewContainer;
-    viewRef.clear();
-
-    const compRef = viewRef.createComponent(compFactory);
-    (compRef.instance as ISegmentSlideItem).appointments = this.segmentsData[
-      current
-    ].data;
   }
 }

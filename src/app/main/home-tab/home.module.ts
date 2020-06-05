@@ -11,15 +11,17 @@ import { AppointmentComponent } from './dashboard/appointment/appointment.compon
 import { HealthstatusComponent } from './dashboard/healthstatus/healthstatus.component';
 import { PerscriptionsComponent } from './dashboard/perscriptions/perscriptions.component';
 import {PerscriptionDetailComponent} from './dashboard/perscriptions/perscription-detail/perscription-detail.component';
+import {CommonUiModule} from '../../common/common-ui.module';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    HomePageRoutingModule,
-  ],
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        ExploreContainerComponentModule,
+        HomePageRoutingModule,
+        CommonUiModule,
+    ],
     declarations: [
         HomePage,
         DashboardComponent,

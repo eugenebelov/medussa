@@ -8,18 +8,5 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-segment #segments (ionChange)="onSegmentChanged($event)" value="1">
-    <ion-segment-button
-      *ngFor="let segment of perscriptionsData"
-      value="{{ segment.type }}"
-    >
-      <ion-label>{{ segment.label }}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-slides #slides pager="false" [options]="slideOpts" (ionSlideDidChange)="onSlideChange()">
-    <ion-slide *ngFor="let slide of perscriptionsData">
-      <msc-perscription-detail [label]="slide.label" [details]="slide.data"></msc-perscription-detail>
-    </ion-slide>
-  </ion-slides>
+  <msc-segments-slide [segmentsData]="slides"></msc-segments-slide>
 </ion-content>
