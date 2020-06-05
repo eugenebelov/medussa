@@ -7,7 +7,6 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { SlideDirective } from '../segments-slide/slide.directive';
 import { ISegmentSlideItem } from '../segments-slide/segments-slide.component';
 
 @Component({
@@ -23,7 +22,6 @@ export class SlideItemComponent implements OnInit, AfterViewInit {
   @Input() component;
 
   @ViewChild('cont', { read: ViewContainerRef }) cont: ViewContainerRef;
-  @ViewChild(SlideDirective) adSlide: SlideDirective;
 
   ngOnInit() {}
 

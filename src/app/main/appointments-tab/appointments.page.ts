@@ -17,14 +17,12 @@ export class AppointmentsPage {
       label: 'Current',
       data: Appointments,
       component: CurrentComponent,
-      tmpl: '<msc-current></msc-current>'
     },
     {
       type: 1,
       label: 'Past',
       data: Appointments,
       component: PastComponent,
-      tmpl: '<msc-past></msc-past>'
     },
   ];
 }

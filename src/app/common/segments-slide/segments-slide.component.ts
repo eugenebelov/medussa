@@ -1,16 +1,11 @@
 import {
   AfterViewInit,
   Component,
-  ComponentFactoryResolver,
   Input,
   OnInit,
-  QueryList,
   ViewChild,
-  ViewChildren,
 } from '@angular/core';
 import { IonSegment, IonSlides } from '@ionic/angular';
-import { SlideDirective } from './slide.directive';
-import { ISlide } from '../../main/appointments-tab/stub';
 
 interface ISegmentSlide {
   type: number;
@@ -37,15 +32,19 @@ export class SegmentsSlideComponent implements OnInit, AfterViewInit {
   };
 
   @Input() segmentsData: ISegmentSlide[];
+  @Input() lockedSwipe = false;
 
   @ViewChild('slides') slides: IonSlides;
   @ViewChild('segments') segments: IonSegment;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.slides.lockSwipes(this.lockedSwipe);
+  }
 
   ngAfterViewInit(): void {
+    this.slides.lockSwipes(this.lockedSwipe);
   }
 
   onSlideChange() {
@@ -55,7 +54,10 @@ export class SegmentsSlideComponent implements OnInit, AfterViewInit {
   }
 
   onSegmentChanged(ev: any) {
-    this.slides.slideTo(ev.detail.value);
+    this.slides.lockSwipes(false);
+    this.slides.slideTo(ev.detail.value).then(() => {
+      this.slides.lockSwipes(this.lockedSwipe);
+    });
     this.currentSlide = ev.detail.value;
   }
 }

@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <msc-segments-slide [segmentsData]="slides">
+  <msc-segments-slide [segmentsData]="slides" [lockedSwipe]="true">
     <ion-slide *ngFor="let slide of slides">
       <msc-slide-item
         [component]="slide.component"
