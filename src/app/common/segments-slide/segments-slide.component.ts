@@ -4,7 +4,9 @@ import {
   ComponentFactoryResolver,
   Input,
   OnInit,
+  QueryList,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { IonSegment, IonSlides } from '@ionic/angular';
 import { SlideDirective } from './slide.directive';
@@ -17,7 +19,7 @@ interface ISegmentSlide {
 }
 
 export interface ISegmentSlideItem {
-  data?: any;
+  appointments?: any;
 }
 
 @Component({
@@ -26,57 +28,51 @@ export interface ISegmentSlideItem {
   styleUrls: ['./segments-slide.component.scss'],
 })
 export class SegmentsSlideComponent implements OnInit, AfterViewInit {
-  currentSlide = 1;
+  currentSlide = 0;
 
   slideOpts = {
-    initialSlide: 1,
+    initialSlide: this.currentSlide,
     speed: 400,
   };
 
-  allSlides = [];
-
   @Input() segmentsData: ISegmentSlide[];
 
-  @ViewChild(SlideDirective, { static: true }) adSlide: SlideDirective;
+  @ViewChildren(SlideDirective) adSlide: QueryList<SlideDirective>;
 
   @ViewChild('slides') slides: IonSlides;
   @ViewChild('segments') segments: IonSegment;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 
-  ngOnInit() {
-    const compFactory = this.resolver.resolveComponentFactory(
-      this.segmentsData[this.currentSlide].component
-    );
-    const viewRef = this.adSlide.viewContainer;
-    viewRef.clear();
+  ngOnInit() {}
 
-    const compRef = viewRef.createComponent(compFactory);
-    (compRef.instance as ISegmentSlideItem).data = this.segmentsData[
-      this.currentSlide
-    ].data;
-  }
-
-  ngAfterViewInit() {
-    // this.slideContainer.clear();
-    // this.allSlides = this.segmentsData.map((segment) => {
-    //   const factory: ComponentFactory<any> = this.resolver.resolveComponentFactory(
-    //       segment.component
-    //   );
-    //   return this.slideContainer.createComponent(factory);
-    // });
-    //
-    // console.log(this.allSlides);
+  ngAfterViewInit(): void {
+    this.slideRender(this.adSlide.toArray(), this.currentSlide);
   }
 
   onSlideChange() {
-    this.slides
-      .getActiveIndex()
-      .then((i) => (this.segments.value = i.toString()));
+    this.slides.getActiveIndex().then((i) => {
+      this.segments.value = i.toString();
+      this.slideRender(this.adSlide.toArray(), i);
+    });
   }
 
   onSegmentChanged(ev: any) {
     this.slides.slideTo(ev.detail.value);
     this.currentSlide = ev.detail.value;
+  }
+
+  private slideRender(slides: SlideDirective[], current: number = 0) {
+    const compFactory = this.resolver.resolveComponentFactory(
+      this.segmentsData[current].component
+    );
+
+    const viewRef = slides[current].viewContainer;
+    viewRef.clear();
+
+    const compRef = viewRef.createComponent(compFactory);
+    (compRef.instance as ISegmentSlideItem).appointments = this.segmentsData[
+      current
+    ].data;
   }
 }

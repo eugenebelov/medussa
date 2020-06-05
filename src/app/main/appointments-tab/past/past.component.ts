@@ -9,7 +9,7 @@ import { ISegmentSlideItem } from '../../../common/segments-slide/segments-slide
 export class PastComponent implements OnInit, ISegmentSlideItem {
   constructor() {}
 
-  @Input() data: any;
+  @Input() appointments: any;
 
   ngOnInit() {}
 }

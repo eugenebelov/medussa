@@ -15,13 +15,13 @@ export class AppointmentsPage {
     {
       type: 0,
       label: 'Current',
-      data: [],
+      data: Appointments,
       component: CurrentComponent,
     },
     {
       type: 1,
       label: 'Past',
-      data: [],
+      data: Appointments,
       component: PastComponent,
     },
   ];
