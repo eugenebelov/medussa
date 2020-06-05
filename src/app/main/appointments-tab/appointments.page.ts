@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Appointments } from './stub';
+import { CurrentComponent } from './current/current.component';
+import { PastComponent } from './past/past.component';
 
 @Component({
   selector: 'msc-appointments',
@@ -9,5 +11,18 @@ import { Appointments } from './stub';
 export class AppointmentsPage {
   constructor() {}
 
-  appointments = Appointments;
+  slides = [
+    {
+      type: 0,
+      label: 'Current',
+      data: [],
+      component: CurrentComponent,
+    },
+    {
+      type: 1,
+      label: 'Past',
+      data: [],
+      component: PastComponent,
+    },
+  ];
 }

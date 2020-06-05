@@ -9,6 +9,7 @@ import { AppointmentsPageRoutingModule } from './appoinements-routing.module';
 import { AppointementItemComponent } from './appointement-item/appointement-item.component';
 import {CurrentComponent} from './current/current.component';
 import {PastComponent} from './past/past.component';
+import {CommonUiModule} from '../../common/common-ui.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {PastComponent} from './past/past.component';
     FormsModule,
     ExploreContainerComponentModule,
     AppointmentsPageRoutingModule,
+    CommonUiModule,
   ],
   declarations: [AppointmentsPage, AppointementItemComponent, CurrentComponent, PastComponent],
 })

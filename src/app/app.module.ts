@@ -12,6 +12,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonUiModule } from './common/common-ui.module';
 
 import { environment } from '../environments/environment';
 
@@ -28,6 +29,7 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    CommonUiModule,
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,23 @@
+<ion-segment #segments (ionChange)="onSegmentChanged($event)" value="1">
+  <ion-segment-button
+    *ngFor="let segment of segmentsData"
+    value="{{ segment.type }}"
+  >
+    <ion-label>{{ segment.label }}</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<ion-slides
+  #slides
+  pager="false"
+  [options]="slideOpts"
+  (ionSlideDidChange)="onSlideChange()"
+>
+  <ion-slide *ngFor="let slide of segmentsData">
+    <p>yopta {{ slide.type }}</p>
+    <!--    <ng-container>{{ slide.component() }}</ng-container>-->
+    <!--    <p msdSegmentSlide component="{{slide.component}}"></p>-->
+    <!--    <msc-perscription-detail [label]="slide.label" [details]="slide.data"></msc-perscription-detail>-->
+    <ng-template msdSegmentSlide></ng-template>
+  </ion-slide>
+</ion-slides>
