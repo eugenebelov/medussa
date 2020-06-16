@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { CommonUiModule } from './common/common-ui.module';
 
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { environment } from '../environments/environment';
     AngularFireStorageModule,
     AngularFireAuthModule,
     CommonUiModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     StatusBar,

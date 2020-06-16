@@ -1,0 +1,18 @@
+<p>
+  profile-details works!
+</p>
+
+<ion-card>
+  <ion-list>
+    <ion-item *ngFor="let tech of techs" button>
+      <ion-icon
+              slot="start"
+              name="logo-{{tech.icon}}"
+              [ngStyle]="{'color': tech.color}"
+      ></ion-icon>
+      <ion-label>
+        <h3>{{tech.title}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-card>

@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'profile-tab',
-        loadChildren: () => import('../profile-tab/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../profile-tab/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: 'more',
