@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'msc-profile',
@@ -7,6 +8,7 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
   styleUrls: ['profile.page.scss'],
 })
 export class ProfilePage {
-  details = ProfileDetailsComponent;
+  @ViewChild('myNav') nav: NavController;
+  public details = ProfileDetailsComponent;
   constructor() {}
 }

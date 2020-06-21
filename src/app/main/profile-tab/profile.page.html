@@ -14,13 +14,13 @@
   </ion-header>
 
   <ion-card [ngClass]="'profile'">
-    <ion-avatar>
-      <img
-        src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
-      />
-    </ion-avatar>
-    <p>adkhasjhdf</p>
+    <div [ngClass]="'avatarContainer'">
+      <ion-img
+        [src]="'https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Prescription02&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=Hoodie&clotheColor=Pink&eyeType=Close&eyebrowType=UnibrowNatural&mouthType=Twinkle&skinColor=Tanned'"
+      ></ion-img>
+      <h1>Mike Doug</h1>
+    </div>
   </ion-card>
-
-  <ion-nav root="msc-profile-details"></ion-nav>
+  <!--    <ion-nav #myNav [root]="details"></ion-nav>-->
+  <msc-profile-details></msc-profile-details>
 </ion-content>
